@@ -71,20 +71,29 @@ class LinkedList
     #connects current node to new node
     current.next_node = new_node
   end
-
-  # I know this find method doesn't work, it was just what I waas working on before bed
+  #getting undefined method for 'next_node' on line 84. But can't see the diconnect.
   def find(index, amt)
-    current = @head
-    data = @data
-    amt = 0
-    while current != nil
-      if current.data == data
-        current.data
-      else
-        current = current.next_node
-      end
-      amt += 1
+    current_node = @head
+    count = 0
+    # loops through the list until it reaches value inputed
+    # for index
+    until current_node == index
+      # counts each  time that it found the node
+        count += 1
+        #traverses the node until it hit the index value
+        current_node = current_node.next_node
     end
-    data
+    # creates empty string to hold the results from loops
+    found = ""
+    # takes the value given in argumenta and
+    # returns the node value that many times
+    amt.times do
+      # shovels all the  values of node found into empty string
+      found << current_node.data + " "
+      # traverses the list
+      current_node = current_node.next_node
+    end
+    # chops off ending space
+    found.chop
   end
 end
