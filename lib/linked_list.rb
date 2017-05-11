@@ -71,15 +71,16 @@ class LinkedList
     #connects current node to new node
     current.next_node = new_node
   end
-  #getting undefined method for 'next_node' on line 84. But can't see the diconnect.
+  
   def find(index, amt)
     current_node = @head
     count = 0
     # loops through the list until it reaches value inputed
     # for index
-    until current_node == index
-      # counts each  time that it found the node
+    until count == index
+      # loops through the list until it gets to the index value given
         count += 1
+        #require "pry"; binding.pry
         #traverses the node until it hit the index value
         current_node = current_node.next_node
     end
