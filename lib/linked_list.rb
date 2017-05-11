@@ -72,6 +72,7 @@ class LinkedList
     current.next_node = new_node
   end
 
+  # I know this find method doesn't work, it was just what I waas working on before bed
   def find(index, amt)
     current = @head
     data = @data
