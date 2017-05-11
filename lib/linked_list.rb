@@ -97,4 +97,21 @@ class LinkedList
     # chops off ending space
     found.chop
   end
+  
+  def include?(data)
+    current_node = @head
+    #loops through list until the end
+    until current_node == nil
+      # if the current_node = data inputed it will return true
+      if current_node == data
+        true
+      else
+        false
+      end
+      #traverses the list
+      current_node = current_node.next_node
+    end
+    # returns the data
+    data
+  end
 end
